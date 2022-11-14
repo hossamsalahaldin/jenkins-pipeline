@@ -5,13 +5,18 @@ pipeline {
         stage('Clone') {
             steps {
                echo 'Cloning the repo...'
-               sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+               withMaven {
+                    sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+               }
+              
             }
         }
         stage('Build') {
             steps {
               echo 'building repo ...'
-              sh 'mvn clean install'
+              withMaven {
+                  sh 'mvn clean install'   
+              }
             }
         }
         stage('Run'){
