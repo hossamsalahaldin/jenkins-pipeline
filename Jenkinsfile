@@ -5,7 +5,7 @@ pipeline {
         stage('Clone') {
             steps {
                echo 'Cloning the repo...'
-               withMaven {
+               withMaven(maven : 'maven-3.8.6'){
                     sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
                }
               
@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
               echo 'building repo ...'
-              withMaven {
+              withMaven(maven : 'maven-3.8.6'){
                   sh 'mvn clean install'   
               }
             }
