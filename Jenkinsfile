@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Run'){
             steps{
-                sh 'java -jar $WORKSPACE\'/target/jenkins-tutorial-0.0.1-SNAPSHOT.jar\''&
+                sh "java -jar $WORKSPACE\'/target/jenkins-tutorial-0.0.1-SNAPSHOT.jar\'"&
             }
         }
     }
