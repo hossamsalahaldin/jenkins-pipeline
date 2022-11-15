@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+                withMaven(maven : 'maven-3.8.6'){
+                    sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+                }
             }
         }
         stage('Build') {
