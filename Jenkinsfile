@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Run'){
             steps{
-                sh "export BUILD_ID=dontKillMe"
+                sh "export JENKINS_NODE_COOKIE=dontKillMe"
                 sh "java -jar $WORKSPACE\'/target/jenkins-tutorial-0.0.1-SNAPSHOT.jar\'&"
             }
         }
