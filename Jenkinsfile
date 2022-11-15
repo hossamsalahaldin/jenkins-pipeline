@@ -6,7 +6,7 @@ pipeline {
             steps {
                echo 'Cloning the repo...'
                withMaven(maven : 'maven-3.8.6'){
-                    sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+                    sh 'mvn clone -X https://github.com/hossamsalahaldin/jenkins-pipeline.git'
                }
               
             }
