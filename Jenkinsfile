@@ -2,16 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                withMaven(maven : 'maven-3.8.6'){
-                    sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
-                }
-            }
-        }
+//         stage('Clone') {
+//             steps {
+//                 withMaven(maven : 'maven-3.8.6'){
+//                     sh 'mvn clone https://github.com/hossamsalahaldin/jenkins-pipeline.git'
+//                 }
+//             }
+//         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                withMaven(maven : 'maven-3.8.6'){
+                     sh 'mvn clean install'
+                }
+               
             }
         }
         stage('Run'){
