@@ -20,6 +20,7 @@ public class EmployeeController {
         employees.add(new Employee(3,"Reham Huissen",25));
         employees.add(new Employee(4,"Heba Abdelqader",30));
         employees.add(new Employee(5,"Omar Mouneer",32));
+        employees.add(new Employee(6,"Ismael Shebl",37));
         return employees;
     }
 }
