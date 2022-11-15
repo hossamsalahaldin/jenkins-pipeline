@@ -19,8 +19,8 @@ pipeline {
         }
         stage('Run'){
             steps{
-                sh "export JENKINS_NODE_COOKIE=dontKillMe"
-                sh "java -jar $WORKSPACE\'/target/jenkins-tutorial-0.0.1-SNAPSHOT.jar\'&"
+                //sh "export JENKINS_NODE_COOKIE=dontKillMe"
+                sh "JENKINS_NODE_COOKIE=dontKillMe java -jar $WORKSPACE\'/target/jenkins-tutorial-0.0.1-SNAPSHOT.jar\'&"
             }
         }
     }
